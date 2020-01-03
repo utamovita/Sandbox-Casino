@@ -1,9 +1,10 @@
 import React from 'react';
+import SelectGame from './selectGame';
 
 function App() {
   return (
     <div className="App">
-      Cassino royale xdd
+      <SelectGame />
     </div>
   );
 }

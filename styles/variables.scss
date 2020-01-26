@@ -1,0 +1,63 @@
+/* =Base Colors
+************************************************************** */
+
+$c-white: #fff;
+$c-black: #000;
+
+
+/* =Colors
+************************************************************** */
+
+$c-accentPrimary: $c-white;
+$c-accentSecondary: $c-black;
+
+$c-facebook: #3c5a99;
+$c-twitter: #1da1f2;
+$c-youtube: #ff0000;
+$c-googlePlus: #d34836;
+$c-instagram: #c1558b;
+
+
+/* =fonts
+************************************************************** */
+
+$f-fontAwesome: 'Font Awesome 5 Free';
+$f-fontAwesomeBrands: 'Font Awesome 5 Brands';
+$f-baseFontFamily: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$f-gothamRounded: 'GothamRounded';
+
+
+/* =breaks
+************************************************************** */
+
+$break-mobile: 767px;
+$break-mid: 991px;
+$break-laptop: 1199px;
+
+
+/* =minimum device sizes
+************************************************************** */
+
+$tablet-min: 768px;
+$desktop-min: 1200px;
+
+
+/* =Grid
+************************************************************** */
+
+$wrapper: 1302px;
+$wrapper-mobile: 480px;
+$grid-md: 768px;
+$grid-lg: 992px;
+$grid-xl: 1199px;
+
+
+/* =Paddings, Margins
+************************************************************** */
+
+$space-x-small: 10px;
+$space-small: 15px;
+$space-standard: 20px;
+$space-medium: 30px;
+$space-large: 40px;
+$space-x-large: 50px;

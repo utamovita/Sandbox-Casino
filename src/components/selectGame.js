@@ -5,12 +5,12 @@ import { Container, Button } from '@material-ui/core';
 function SelectGame() {
   return (
     <Container className="select-game">
-      <h1>Test your luck</h1>
+      <h1>Dice casino</h1>
       <Link to="/high-low">
-        <Button color="primary" variant="contained">Win/low</Button>
+        <Button color="primary" variant="contained">High/low</Button>
       </Link>
-      <Link to="/one-armed-bandit">
-        <Button color="primary" variant="contained">One armed bandit</Button>
+      <Link to="/number">
+        <Button color="primary" variant="contained">Number</Button>
       </Link>
       <Link to="/blackjack">
         <Button color="primary" variant="contained">Blackjack</Button>

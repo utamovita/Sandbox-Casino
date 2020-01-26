@@ -4,7 +4,9 @@ import { Button } from '@material-ui/core';
 
 const Return = () => {
     return (
-        <Button>Return</Button>
+        <Link to="/">
+            <Button color="primary" variant="contained">Return</Button>
+        </Link>
     );
 }
 

@@ -3,7 +3,7 @@ import GameSettings from './gameSettings';
 import Statistics from './statistics';
 import GameLog from './gameLog';
 import Dice from './dice';
-import Return from './return';
+import Return from '../../return';
 
 const Blackjack = () => {
     return (

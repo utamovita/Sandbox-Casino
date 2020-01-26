@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './components/App';
 import Blackjack from './components/game/blackjack/index';
 import HighLow from './components/game/high-low/index';
-import OneArmedBandit from './components/game/one-armed-bandit/index';
+import Number from './components/game/number/index';
 import './main.scss';
 
 ReactDOM.render((
@@ -13,7 +13,7 @@ ReactDOM.render((
             <Route exact path="/" component={App} />
             <Route path="/high-low" component={HighLow} />
             <Route path="/blackjack" component={Blackjack} />
-            <Route path="/one-armed-bandit" component={OneArmedBandit} />
+            <Route path="/number" component={Number} />
         </Switch>
     </Router>
 ), document.querySelector('#root'));

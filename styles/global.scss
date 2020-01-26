@@ -1,0 +1,21 @@
+@import './variables';
+@import './normalize';
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $c-white;
+  color: $c-black;
+  font: normal normal normal 1rem $f-baseFontFamily;
+  overflow-x: hidden;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  color: $c-accentPrimary;
+  text-decoration: none;
+}

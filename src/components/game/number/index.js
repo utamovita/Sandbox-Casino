@@ -4,8 +4,8 @@ import Return from '../../return';
 const index = () => {
     return (
         <>
-            <h1>Blackjack</h1>
-            This game is currently unavaiable, please come back later.
+            <h1>Number</h1>
+            This game is currently unavaiable, play something else meanwhile? 
             <Return/>
         </>
     );

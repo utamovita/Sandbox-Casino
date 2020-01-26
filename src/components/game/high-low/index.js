@@ -1,12 +1,19 @@
 import React from 'react';
+import GameSettings from './gameSettings';
+import Statistics from './statistics';
+import GameLog from './gameLog';
+import Dice from './dice';
+import Return from './return';
 
 const Blackjack = () => {
     return (
-        <div>
-            tak, to bedzie tibijskie kasyno xd
-
-            <button>back to games</button>
-        </div>
+        <>
+            <GameSettings/>
+            <GameLog/>
+            <Dice/>
+            <Statistics/>
+            <Return/>
+        </>
     );
 };
 

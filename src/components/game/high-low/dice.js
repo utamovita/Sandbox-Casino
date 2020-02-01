@@ -1,9 +1,10 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 const dice = () => {
     return (
-        <div>
-            dice
+        <div class="dice">
+            <Button color="primary" variant="contained">Roll</Button>
         </div>
     );
 }

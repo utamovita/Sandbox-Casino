@@ -1,10 +1,12 @@
-.select-game {
-    h1 {
-      text-align: center;
-    }
+.select-game.MuiContainer-root {
+  flex-direction: column;
   
-    .MuiButtonBase-root {
-      display: block;
-      margin: 15px auto;
-    }
+  h1 {
+    text-align: center;
   }
+
+  .MuiButtonBase-root {
+    display: block;
+    margin: 15px auto;
+  }
+}

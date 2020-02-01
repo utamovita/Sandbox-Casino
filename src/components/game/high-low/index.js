@@ -1,19 +1,18 @@
 import React from 'react';
-import GameSettings from './gameSettings';
+import GameSettings from './game-settings/gameSettings';
 import Statistics from './statistics';
 import GameLog from './gameLog';
 import Dice from './dice';
-import Return from '../../return';
+import { Container } from '@material-ui/core';
 
 const Blackjack = () => {
     return (
-        <>
+        <Container className="game-container">
             <GameSettings/>
             <GameLog/>
             <Dice/>
             <Statistics/>
-            <Return/>
-        </>
+        </Container>
     );
 };
 

@@ -1,6 +1,12 @@
 @import "../../variables";
 @import "../../fonts";
+@import "../../global";
+@import "../../normalize";
 
 /* import components styles
 ************************************************************** */
 @import "./components/selectGame.scss";
+@import "./components/settings.scss";
+@import "./components/gameLog.scss";
+@import "./components/dice.scss";
+@import "./components/statistics.scss";

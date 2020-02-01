@@ -1,0 +1,27 @@
+.game-settings {
+    display: flex;
+    flex-basis: 100%;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: $space-large;
+    position: relative;
+    padding: 0 0 $space-large;
+
+    .MuiFormControl-root {
+        margin: 0 $space-standard;
+    }
+
+    .MuiInputBase-root {
+        min-width: 150px;
+        text-align: left;
+    }
+
+    .return {
+        margin-right: auto;
+    }
+
+    .sandbox {
+        margin-left: auto;
+    }
+}

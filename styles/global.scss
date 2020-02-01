@@ -1,5 +1,4 @@
 @import './variables';
-@import './normalize';
 
 html {
   font-size: 16px;
@@ -15,7 +14,13 @@ body {
 a,
 a:hover,
 a:active,
-a:visited {
+a:visited{
   color: $c-accentPrimary;
   text-decoration: none;
+}
+
+.MuiContainer-root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

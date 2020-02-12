@@ -10,7 +10,7 @@ import './main.scss';
 ReactDOM.render((
     <Router>
         <Switch>
-            <Route exact path="/ " component={App} />
+            <Route exact path="/" component={App} />
             <Route path="/high-low" component={HighLow} />
             <Route path="/blackjack" component={Blackjack} />
             <Route path="/number" component={Number} />

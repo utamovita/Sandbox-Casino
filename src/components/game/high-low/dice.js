@@ -11,7 +11,7 @@ const dice = () => {
         <div class="dice">
             <Button color="primary" variant="contained" onClick={handleRoll}>Roll</Button>
             <div className="roll six">
-                <span></span>
+                <span> xd</span>
                 <span></span>
                 <span></span>
                 <span></span>

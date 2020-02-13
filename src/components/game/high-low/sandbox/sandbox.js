@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 
 const Sandbox = () => {
     return (
-        <Button className="sandbox" color="link" variant="contained" disabled>
+        <Button className="sandbox" color="primary" variant="contained" disabled>
             Sandbox
         </Button>
     );

@@ -2,9 +2,10 @@ import React from 'react';
 
 const statistics = () => {
     return (
-        <div class="statistics">
+        <div className="statistics">
             <h2>Statistics</h2>
-            <table>
+            <table>          
+                <tbody>
                 <tr>
                     <td>Balance</td>
                     <td>0</td>
@@ -53,6 +54,7 @@ const statistics = () => {
                     <td>1's</td>
                     <td>0</td>
                 </tr>
+                </tbody>    
             </table>
         </div>
     );

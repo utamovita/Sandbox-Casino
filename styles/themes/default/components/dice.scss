@@ -8,6 +8,7 @@
         background-color: $c-white;
         border: 2px solid $c-black;
         border-radius: 15px;
+        cursor: pointer;
 
         span {
             display: block;
@@ -21,16 +22,19 @@
         }
 
 
-        &.one {
-          display: none;
-            span:nth-child(1) {
+        &.num1 {
+            span {
+                display: none;
+
+                &:nth-child(1) {
                 top: 50%;
                 left: 50%;
                 display: block;
             }
+            } 
         }
 
-        &.two {
+        &.num2 {
             span {
               display: none;
               
@@ -48,7 +52,7 @@
             }
         }
 
-        &.three {
+        &.num3 {
             span {
               display: none;
                 &:nth-child(1) {
@@ -71,7 +75,7 @@
             }
         }
 
-        &.four {
+        &.num4 {
             span {
               display: none;
                 &:nth-child(1) {
@@ -100,7 +104,7 @@
             }
         }
 
-        &.five {
+        &.num5 {
             span {
               display: none;
                 &:nth-child(1) {
@@ -135,7 +139,7 @@
             }
         }
 
-        &.six {
+        &.num6 {
             span {
                 &:nth-child(1) {
                     top: 25%;

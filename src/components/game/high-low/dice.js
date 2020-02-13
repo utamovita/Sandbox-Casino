@@ -1,26 +1,34 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 
-const dice = () => {
+class Dice extends React.Component {
 
-    const handleRoll = () => {
-        console.log(Math.floor(Math.random()*6) + 1);
+    state = {
+        number: 1,
     }
 
-    return (
-        <div class="dice">
-            <Button color="primary" variant="contained" onClick={handleRoll}>Roll</Button>
-            <div className="roll six">
-                <span> x</span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    handleRoll = (e) => {
+        let number =  Math.floor(Math.random()*6) + 1;
+     
+        this.setState({
+            number,
+        })         
+    }
+
+    render() {
+        return (
+            <div className="dice">
+                <div className={'roll num' + this.state.number} onClick={this.handleRoll}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-    );
+        )
+    }  
 }
 
 
-export default dice;
+export default Dice;

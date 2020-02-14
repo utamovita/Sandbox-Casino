@@ -11,10 +11,13 @@ class Dice extends React.Component {
      
         this.setState({
             number,
-        })         
+        })  
+        console.log('child1: ' + this.state.number + number)
+        this.props.handleRoll(number);       
     }
 
     render() {
+
         return (
             <div className="dice">
                 <div className={'roll num' + this.state.number} onClick={this.handleRoll}>

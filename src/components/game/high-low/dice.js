@@ -1,33 +1,35 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { increment, randomNumber } from './../../../actions';
+import { useSelector } from 'react-redux';
 
-class Dice extends React.Component {
-
-    state = {
-        number: 1,
-    }
-
-    handleRoll = (e) => {
+function Dice (){
+    const dispatch = useDispatch();
+    
+    const handleRoll = () => {
         let number =  Math.floor(Math.random()*6) + 1;
-     
-        this.setState({
-            number,
-        })         
-    }
+        dispatch(increment());
+        dispatch(randomNumber(number));
 
-    render() {
-        return (
-            <div className="dice">
-                <div className={'roll num' + this.state.number} onClick={this.handleRoll}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        console.log(number)     
+    } 
+
+    let randomNum = useSelector(state => state.randomNumber);
+    
+    return (
+        <div className="dice">
+            <div className={'roll num' + randomNum} onClick={handleRoll}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        )
-    }  
+        </div>
+    )
+    
+    
 }
 
 

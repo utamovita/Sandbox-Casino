@@ -6,14 +6,22 @@ import Blackjack from './components/game/blackjack/index';
 import HighLow from './components/game/high-low/index';
 import Number from './components/game/number/index';
 import './main.scss';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import allReducer from './reducers';
+
+const store = createStore(allReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render((
-    <Router>
-        <Switch>
-            <Route exact path="/" component={App} />
-            <Route path="/high-low" component={HighLow} />
-            <Route path="/blackjack" component={Blackjack} />
-            <Route path="/number" component={Number} />
-        </Switch>
-    </Router>
+    <Provider store={store}>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={App} />
+                <Route path="/high-low" component={HighLow} />
+                <Route path="/blackjack" component={Blackjack} />
+                <Route path="/number" component={Number} />
+            </Switch>
+        </Router>
+    </Provider>
+    
 ), document.querySelector('#root'));

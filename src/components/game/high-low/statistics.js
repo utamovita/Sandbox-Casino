@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const statistics = () => {
+function Statistics () {
+    const counter = useSelector(state => state.counter);
+
     return (
         <div className="statistics">
             <h2>Statistics</h2>
@@ -8,15 +11,11 @@ const statistics = () => {
                 <tbody>
                 <tr>
                     <td>Balance</td>
-                    <td>0</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Games played</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Games played</td>
-                    <td>0</td>
+                    <td>{counter.gamesPlayed}</td>
                 </tr>
                 <tr>
                     <td>Max win strike</td>
@@ -60,4 +59,4 @@ const statistics = () => {
     );
 }
 
-export default statistics;
+export default Statistics;

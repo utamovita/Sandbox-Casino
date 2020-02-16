@@ -4,32 +4,26 @@ class Dice extends React.Component {
 
     state = {
         counter: 0,
-        number: [
-            {id: 0 , number: 1},
-        ],
+        roll: 1,
     }
 
-    handleRoll = (e) => {
+    handleRoll = () => {
         let counter = this.state.counter;
         counter++;
-        let b = this.state.number;
-        let number =  Math.floor(Math.random()*6) + 1;
-        let a = {id: counter, number: number};
-        b.unshift(a);
-     
+        let rollNumber =  Math.floor(Math.random()*6) + 1;
+ 
         this.setState({
-            counter: counter,
-            number: b,
+            counter,
+            roll: rollNumber,
         })  
-        this.props.handleRoll(number);  
-
-           
+        
+        this.props.handleRoll(counter, rollNumber);       
     }
 
     render() {
         return (
             <div className="dice">
-                <div className={'roll num' + this.state.number[0].number} onClick={this.handleRoll}>
+                <div className={'roll num' + this.state.roll} onClick={this.handleRoll}>
                     <span></span>
                     <span></span>
                     <span></span>

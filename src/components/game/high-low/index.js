@@ -8,39 +8,56 @@ import { Container } from '@material-ui/core';
 class HighLow extends React.Component {
 
     state = {
-        counter: 0,
-        number: [
-            {id: 0 , number: 0},
-        ],
         bet: 'High',
+        games: [
+            {id: 0 , rollNumber: 0, bet: 'High',},
+        ], 
+        rolled: {one: 0, two: 0, three: 0, four: 0, five: 0, six: 0}  
     }
     
 
-    handleRoll = (number) => {
-        let counter = this.state.counter;
-        counter++;
-        let b = this.state.number;
+    handleRoll = (id, rollNumber) => {
+        let currentState = this.state.games;
+        let one = this.state.rolled.one;
+        let two = this.state.rolled.two;
+        let three = this.state.rolled.three;
+        let four = this.state.rolled.four;
+        let five = this.state.rolled.five;
+        let six = this.state.rolled.six;
 
-        let a = {id: counter, number: number}
+        let game = {id, rollNumber, bet: this.state.bet}
 
-        b.unshift(a);
+        currentState.unshift(game);
+        if(rollNumber === 1){
+            one++;
+        } else if(rollNumber === 2){
+            two++;
+        } else if(rollNumber === 3){
+            three++;
+        } else if(rollNumber === 4){
+            four++;
+        } else if(rollNumber === 5){
+            five++;
+        } else six++;
+        
         this.setState({
-            counter,
-            number: b,
-        })  
+            games: currentState,
+            rolled: {one ,two, three, four, five, six}
+        }) 
     }
 
-    handleBet = (target) => {
-        this.setState({ bet: target })
+    handleBet = (bet) => {
+        this.setState({ bet })
       }
     
     render() {
+        console.log(this.state.one)
         return (
             <Container className="game-container">
                 <GameSettings handleBet={this.handleBet}/>
-                <GameLog number={this.state.number} bet={this.state.bet}/>
+                <GameLog games={this.state.games}/>
                 <Dice handleRoll={this.handleRoll} />
-                <Statistics played={this.state.counter}/>
+                <Statistics played={this.state.games} rolled={this.state.rolled}/>
             </Container>
         );
     }

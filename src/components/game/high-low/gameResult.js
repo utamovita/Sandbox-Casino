@@ -2,23 +2,23 @@ import React from 'react'
 
 const GameResult= (props) => {
 
-  const { num, bet } = props;
+  const { number, bet } = props;
 
-  let a;
+  let gameResult;
 
-  if(bet === 'High' && num > 3){
-    a = 'win'
-  } else if (bet === 'High' && num <= 3) {
-    a = 'lose'
-  } else if (bet === 'Low' && num <= 3){
-    a = 'win'
-  } else if (bet === 'Low' && num > 3) {
-    a = 'lose'
+  if(bet === 'High' && number > 3){
+    gameResult = 'win'
+  } else if (bet === 'High' && number <= 3) {
+    gameResult = 'lose'
+  } else if (bet === 'Low' && number <= 3){
+    gameResult = 'win'
+  } else if (bet === 'Low' && number > 3) {
+    gameResult = 'lose'
   }
 
     return (
         <div className="record">
-          {(num > 0) ? `You rolled ${num}, you ${a}.` : ""} 
+          {(number > 0) ? `You rolled ${number}, you ${gameResult}. (${bet})` : ""} 
         </div>
     )
 }

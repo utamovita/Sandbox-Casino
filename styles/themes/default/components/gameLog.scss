@@ -1,3 +1,8 @@
 .game-log{
-    flex-basis: 40%;
+    flex-basis: 30%;
+    
+    .history {
+        overflow-y: auto;
+        max-height: 260px;
+    }
 }

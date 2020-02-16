@@ -3,13 +3,15 @@ import GameResult from './gameResult';
 
 const GameLog = (props) => {
   
-  const { number, bet } = props;
+  const { games } = props;
   
-  const results = number.map(result => <GameResult key={result.id} num={result.number} bet={bet}/>)
+  const results = games.map(result => <GameResult key={result.id} number={result.rollNumber} bet={result.bet}/>)
     return (
       <div className="game-log">
         <h2>Game history</h2>
-        {results}
+        <div className="history">
+          {results}
+        </div>
       </div>
     )
 

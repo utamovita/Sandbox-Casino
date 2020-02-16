@@ -1,8 +1,11 @@
 .dice {
-    flex-basis: 20%;
+    flex-basis: 40%;
 
     .roll {
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         height: 80px;
         width: 80px;
         background-color: $c-white;

@@ -5,15 +5,15 @@ import GameLog from './gameLog';
 import Dice from './dice';
 import { Container } from '@material-ui/core';
 
-const Blackjack = () => {
+const HighLow = () => {
     return (
         <Container className="game-container">
-            <GameSettings/>
-            <GameLog/>
-            <Dice/>
-            <Statistics/>
+            <GameSettings />
+            <GameLog />
+            <Dice />
+            <Statistics />
         </Container>
     );
 };
 
-export default Blackjack;
+export default HighLow;

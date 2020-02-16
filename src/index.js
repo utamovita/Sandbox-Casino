@@ -23,5 +23,5 @@ ReactDOM.render((
             </Switch>
         </Router>
     </Provider>
-    
+
 ), document.querySelector('#root'));

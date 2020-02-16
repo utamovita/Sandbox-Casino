@@ -1,12 +1,6 @@
-export const increment = () => {
+export const newGame = num => {
     return {
-        type: 'INCREMENT'
-    };
-}
-
-export const randomNumber = num => {
-    return {
-        type: 'RANDOM_NUM',
+        type: 'NEW_GAME',
         payload: num
     };
 }

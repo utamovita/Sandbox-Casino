@@ -1,28 +1,29 @@
-const initialState = {
+const initialStatistics = {
     gamesPlayed: 0,
-    one: 0,
-    two: 0,
-    three: 0,
-    four: 0,
-    five: 0,
-    six: 0
-}
+    lastNum: 1,
+    balance: 0,
 
-export const counter = (state = initialState, action) => {
-    switch(action.type) {
-        case 'INCREMENT':
-            return { ...state, gamesPlayed: state.gamesPlayed }
-        default:
-            return state;
+    numberCounter: {
+        num1: 0,
+        num2: 0,
+        num3: 0,
+        num4: 0,
+        num5: 0,
+        num6: 0
+    },
+
+    streak: {
+        wins: 0,
+        loses: 0
     }
 }
 
-export const randomNumber = (state = 1, action) => {
-    switch (action.type) {
-        case 'RANDOM_NUM':
-            return state = action.payload;
-        default:
-            return state;
+export const counter = (state = initialStatistics, action) => {
+    if (action.type === 'NEW_GAME') {
+        state.gamesPlayed += 1;
+        state.lastNum = action.payload;
+        state.numberCounter['num' + action.payload] += 1;
     }
-}
 
+    return state;
+}

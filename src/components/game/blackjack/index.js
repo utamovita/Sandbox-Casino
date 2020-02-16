@@ -6,7 +6,7 @@ const index = () => {
         <>
             <h1>Blackjack</h1>
             This game is currently unavaiable, please come back later.
-            <Return/>
+            <Return />
         </>
     );
 };

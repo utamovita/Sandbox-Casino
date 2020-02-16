@@ -1,9 +1,8 @@
-import { counter, randomNumber} from './counter';
+import { counter } from './counter';
 import { combineReducers } from 'redux';
 
 const allReducer = combineReducers({
-    counter,
-    randomNumber
+    counter
 })
 
 export default allReducer;

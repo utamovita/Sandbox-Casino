@@ -8,25 +8,39 @@ import { Container } from '@material-ui/core';
 class HighLow extends React.Component {
 
     state = {
-        number: 1,
+        counter: 0,
+        number: [
+            {id: 0 , number: 0},
+        ],
+        bet: 'High',
     }
     
 
     handleRoll = (number) => {
-     
+        let counter = this.state.counter;
+        counter++;
+        let b = this.state.number;
+
+        let a = {id: counter, number: number}
+
+        b.unshift(a);
         this.setState({
-            number,
-        }, console.log('parent: ' + this.state.number) )            
+            counter,
+            number: b,
+        })  
     }
 
+    handleBet = (target) => {
+        this.setState({ bet: target })
+      }
+    
     render() {
-        console.log(this.state.number)
         return (
             <Container className="game-container">
-                <GameSettings/>
-                <GameLog number={this.state.number}/>
+                <GameSettings handleBet={this.handleBet}/>
+                <GameLog number={this.state.number} bet={this.state.bet}/>
                 <Dice handleRoll={this.handleRoll} />
-                <Statistics/>
+                <Statistics played={this.state.counter}/>
             </Container>
         );
     }

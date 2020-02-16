@@ -10,6 +10,13 @@ class gameSettings extends React.Component {
     betAmount: 0.1
   }
 
+  handleBet = (e) => {
+    const target = e.target.value;
+    this.setState({ bet: target });
+    this.props.handleBet(target);
+    
+  }
+
   render() {
     return (
       <div className="game-settings">
@@ -21,7 +28,7 @@ class gameSettings extends React.Component {
           <InputLabel>Multiplier</InputLabel>
           <Select
             className="custom__select"
-            onChange={(e) => this.setState({ ratio: e.target.value })}
+            onChange={this.handleBet}
             value={this.state.ratio}
           >
             <MenuItem value="1.8">180%</MenuItem>
@@ -34,7 +41,7 @@ class gameSettings extends React.Component {
         <FormControl>
           <InputLabel>Bet</InputLabel>
           <Select
-            onChange={(e) => this.setState({ bet: e.target.value })}
+            onChange={this.handleBet}
             value={this.state.bet}
           >
             <MenuItem value="Low">Low</MenuItem>

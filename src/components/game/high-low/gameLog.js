@@ -1,22 +1,18 @@
-import React from 'react'
+import React from 'react';
+import GameResult from './gameResult';
 
-class GameLog extends React.Component {
-
-  render() {
-    console.log(this.props.number)
+const GameLog = (props) => {
+  
+  const { number, bet } = props;
+  
+  const results = number.map(result => <GameResult key={result.id} num={result.number} bet={bet}/>)
     return (
       <div className="game-log">
         <h2>Game history</h2>
-        <div className="record">
-          You rolled {this.props.number}, you win.
-          
-        </div>
-        <div className="record">
-          You rolled 1, you lose. 
-        </div>
+        {results}
       </div>
     )
-  }
+
 }
 
 export default GameLog;

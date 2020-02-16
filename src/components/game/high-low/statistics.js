@@ -1,6 +1,6 @@
 import React from 'react';
 
-const statistics = () => {
+const statistics = (props) => {
     return (
         <div className="statistics">
             <h2>Statistics</h2>
@@ -16,7 +16,7 @@ const statistics = () => {
                 </tr>
                 <tr>
                     <td>Games played</td>
-                    <td>0</td>
+                    <td>{props.played}</td>
                 </tr>
                 <tr>
                     <td>Max win strike</td>

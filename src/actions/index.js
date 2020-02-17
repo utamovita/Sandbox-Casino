@@ -4,3 +4,15 @@ export const newGame = num => {
         payload: num
     };
 }
+
+export const playerWins = () => {
+    return {
+        type: 'PLAYER_WINS'
+    };
+}
+
+export const playerLoses = () => {
+    return {
+        type: 'PLAYER_LOSES'
+    };
+}

@@ -1,17 +1,24 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { newGame } from './../../../actions';
+import { newGame, playerWins, playerLoses } from './../../../actions';
 import { useSelector } from 'react-redux';
 
 function Dice() {
     const dispatch = useDispatch();
+    let randomNum = useSelector(state => state.counter.lastNum);
+    let playerBet = useSelector(state => state.gameSettings.bet);
 
     const handleRoll = () => {
         let number = Math.floor(Math.random() * 6) + 1;
         dispatch(newGame(number));
+
+        if (number > 3 && playerBet) dispatch(playerWins());
+        else dispatch(playerLoses());
+
+        setTimeout(handleRoll, 5);
     }
 
-    let randomNum = useSelector(state => state.counter.lastNum);
+
 
     return (
         <div className="dice">
@@ -26,6 +33,5 @@ function Dice() {
         </div>
     )
 }
-
 
 export default Dice;

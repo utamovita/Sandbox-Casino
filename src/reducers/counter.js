@@ -2,6 +2,8 @@ const initialStatistics = {
     gamesPlayed: 0,
     lastNum: 1,
     balance: 0,
+    wins: 0,
+    loses: 0,
 
     numberCounter: {
         num1: 0,
@@ -14,7 +16,9 @@ const initialStatistics = {
 
     streak: {
         wins: 0,
-        loses: 0
+        loses: 0,
+        maxWins: 0,
+        maxLoses: 0
     }
 }
 
@@ -23,6 +27,22 @@ export const counter = (state = initialStatistics, action) => {
         state.gamesPlayed += 1;
         state.lastNum = action.payload;
         state.numberCounter['num' + action.payload] += 1;
+    }
+
+    if (action.type === 'PLAYER_WINS') {
+        state.wins += 1;
+        state.streak.wins += 1;
+        state.streak.loses = 0;
+        console.log('player wins');
+        if (state.streak.wins > state.streak.maxWins) state.streak.maxWins += 1;
+    }
+
+    if (action.type === 'PLAYER_LOSES') {
+        state.loses += 1;
+        state.streak.loses += 1;
+        state.streak.wins = 0;
+        console.log('player loses');
+        if (state.streak.loses > state.streak.maxLoses) state.streak.maxLoses += 1;
     }
 
     return state;

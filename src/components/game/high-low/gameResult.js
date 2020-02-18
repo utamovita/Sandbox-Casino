@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const GameResult= (props) => {
+
+  const counter = useSelector(state => state.counter);
 
   const { number, bet } = props;
 
@@ -18,7 +21,7 @@ const GameResult= (props) => {
 
     return (
         <div className="record">
-          {(number > 0) ? `You rolled ${number}, you ${gameResult}. (${bet})` : ""} 
+          {(number > 0) ? `You rolled ${counter}, you ${gameResult}. (${bet})` : ""} 
         </div>
     )
 }

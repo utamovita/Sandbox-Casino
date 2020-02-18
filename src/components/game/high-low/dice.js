@@ -1,4 +1,6 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+import {increment} from './actions';
 
 class Dice extends React.Component {
 
@@ -6,6 +8,8 @@ class Dice extends React.Component {
         counter: 0,
         roll: 1,
     }
+
+    // const dispatch = useDispatch();
 
     handleRoll = () => {
         let counter = this.state.counter;

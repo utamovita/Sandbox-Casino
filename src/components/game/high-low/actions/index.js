@@ -27,3 +27,12 @@ export const changeSettings = (ratio, bet, betAmount) => {
         }
     };
 };
+
+export const gameHistory = (num, result, bet) => {
+    return {
+        type: "GAME_HISTORY",
+        num,
+        result,
+        bet
+    };
+};

@@ -1,10 +1,15 @@
 import React from "react";
-import GameResult from "./gameResult";
+import { useSelector } from "react-redux";
 
-const GameLog = props => {
-    const { games } = props;
+const GameLog = () => {
+    const gameHistory = useSelector(state => state.history);
 
-    const results = games.map(result => <GameResult key={result.id} number={result.rollNumber} bet={result.bet} />);
+    const results = gameHistory.map(result => (
+        <div key="1" className="record">
+            {result}
+        </div>
+    ));
+
     return (
         <div className="game-log">
             <h2>Game history</h2>

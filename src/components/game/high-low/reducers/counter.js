@@ -1,5 +1,5 @@
 const initialStatistics = {
-    balance: 0,
+    balance: 10000,
     gamesPlayed: 0,
     lastNum: 1,
     win: 0,
@@ -34,14 +34,22 @@ const counterReducer = (state = initialStatistics, action) => {
             state.win += 1;
             state.strike.wins += 1;
             state.strike.losses = 0;
-            if (state.strike.MaxWins < state.strike.wins) state.strike.MaxWins += 1;
+            if (state.strike.maxWins < state.strike.wins) state.strike.maxWins = state.strike.wins;
+            const prize = action.payload.betAmount * action.payload.ratio;
+            state.balance -= action.payload.betAmount;
+            state.balance += prize;
+            const newBalanceWin = state.balance.toFixed(2);
+            state.balance = newBalanceWin;
             return state;
 
         case "PLAYER_LOSSES":
             state.lose += 1;
             state.strike.losses += 1;
             state.strike.wins = 0;
-            if (state.strike.MaxLosses < state.strike.losses) state.strike.MaxLosses += 1;
+            if (state.strike.maxLosses < state.strike.losses) state.strike.maxLosses = state.strike.losses;
+            state.balance -= action.payload.betAmount;
+            const newBalanceLose = state.balance.toFixed(2);
+            state.balance = newBalanceLose;
             return state;
 
         default:

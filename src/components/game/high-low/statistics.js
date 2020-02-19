@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Statistics = () => {
+    const counterBalance = useSelector(state => state.counter.balance);
     const counterGamesPlayed = useSelector(state => state.counter.gamesPlayed);
     const counterWin = useSelector(state => state.counter.win);
     const counterLose = useSelector(state => state.counter.lose);
@@ -21,7 +22,7 @@ const Statistics = () => {
                 <tbody>
                     <tr>
                         <td>Balance</td>
-                        <td>0</td>
+                        <td>{counterBalance}</td>
                     </tr>
                     <tr>
                         <td>Games played</td>

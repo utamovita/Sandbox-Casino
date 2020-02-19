@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const GameLog = () => {
     const gameHistory = useSelector(state => state.history);
 
-    const results = gameHistory.map(result => <GameResult key="1" string={result} />);
+    const results = gameHistory.map((result, id) => <GameResult key={id} string={result} />).reverse();
 
     return (
         <div className="game-log">

@@ -5,15 +5,23 @@ export const newGame = num => {
     };
 };
 
-export const playerWins = () => {
+export const playerWins = (ratio, betAmount) => {
     return {
-        type: "PLAYER_WINS"
+        type: "PLAYER_WINS",
+        payload: {
+            ratio,
+            betAmount
+        }
     };
 };
 
-export const playerLosses = () => {
+export const playerLosses = (ratio, betAmount) => {
     return {
-        type: "PLAYER_LOSSES"
+        type: "PLAYER_LOSSES",
+        payload: {
+            ratio,
+            betAmount
+        }
     };
 };
 
@@ -25,6 +33,24 @@ export const changeSettings = (ratio, bet, betAmount) => {
             bet,
             betAmount
         }
+    };
+};
+
+export const autoChangeBetLose = () => {
+    return {
+        type: "AUTO_CHANGE_BET_LOSE"
+    };
+};
+
+export const autoChangeBetWin = () => {
+    return {
+        type: "AUTO_CHANGE_BET_WIN"
+    };
+};
+
+export const sandboxMode = () => {
+    return {
+        type: "SANDBOX_MODE"
     };
 };
 

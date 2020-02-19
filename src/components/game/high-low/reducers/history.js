@@ -1,4 +1,4 @@
-const initialHistory = ["Click dice to roll!"];
+const initialHistory = ["Click dice to roll!", "Dupa"];
 
 const historyReducer = (state = initialHistory, action) => {
     switch (action.type) {

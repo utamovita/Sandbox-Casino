@@ -2,22 +2,37 @@ import React from 'react'
 import { Select, MenuItem, InputLabel, FormControl, Input } from '@material-ui/core';
 import Return from '../../../return';
 import SandBox from '../sandbox/sandbox';
+import {useSelector, useDispatch} from 'react-redux';
+import {changeSettings} from '../actions';
 
-class gameSettings extends React.Component {
-  state = {
-    bet: 'High',
-    ratio: 1.8,
-    betAmount: 0.1
-  }
+const GameSettings = () => {
 
-  handleBet = (e) => {
+  const dispatch = useDispatch();
+  const settingsRatio = useSelector(state => state.settings.ratio);
+  const settingsBet = useSelector(state => state.settings.bet);
+  const settingsBetAmount = useSelector(state => state.settings.betAmount);
+
+
+  const handleRatio = (e) => {
     const target = e.target.value;
-    this.setState({ bet: target });
-    this.props.handleBet(target);
-    
+
+    dispatch(changeSettings(target, settingsBet, settingsBetAmount))
   }
 
-  render() {
+  const handleBet = (e) => {
+    const target = e.target.value;
+
+    dispatch(changeSettings(settingsRatio, target, settingsBetAmount))
+  }
+
+  const handleBetAmount = (e) => {
+    const target = e.target.value;
+
+    dispatch(changeSettings(settingsRatio, settingsBet, target))
+  }
+
+
+
     return (
       <div className="game-settings">
         
@@ -28,8 +43,8 @@ class gameSettings extends React.Component {
           <InputLabel>Multiplier</InputLabel>
           <Select
             className="custom__select"
-            onChange={this.handleBet}
-            value={this.state.ratio}
+            onChange={handleRatio}
+            value={settingsRatio}
           >
             <MenuItem value="1.8">180%</MenuItem>
             <MenuItem value="1.9">190%</MenuItem>
@@ -41,8 +56,8 @@ class gameSettings extends React.Component {
         <FormControl>
           <InputLabel>Bet</InputLabel>
           <Select
-            onChange={this.handleBet}
-            value={this.state.bet}
+            onChange={handleBet}
+            value={settingsBet}
           >
             <MenuItem value="Low">Low</MenuItem>
             <MenuItem value="High">High</MenuItem>
@@ -53,15 +68,14 @@ class gameSettings extends React.Component {
         <FormControl>
           <InputLabel>Bet amount</InputLabel>
           <Input
-            onChange={(e) => this.setState({ betAmount: e.target.value })}
-            value={this.state.betAmount}
+            onChange={handleBetAmount}
+            value={settingsBetAmount}
           />
         </FormControl>
 
         <SandBox/>
       </div>
     )
-  }
 }
 
-export default gameSettings;
+export default GameSettings;

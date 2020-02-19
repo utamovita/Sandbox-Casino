@@ -1,31 +1,29 @@
-export const newGame = (num) => {
+export const newGame = num => {
     return {
-        type:'NEWGAME',
+        type: "NEWGAME",
         payload: num
-    }
-}
+    };
+};
 
 export const playerWins = () => {
     return {
-        type:'PLAYER_WINS'
-    }
-}
+        type: "PLAYER_WINS"
+    };
+};
 
 export const playerLosses = () => {
     return {
-        type:'PLAYER_LOSSES'
-    }
-}
-
-
+        type: "PLAYER_LOSSES"
+    };
+};
 
 export const changeSettings = (ratio, bet, betAmount) => {
     return {
-        type: 'CHANGE_SETTINGS',
+        type: "CHANGE_SETTINGS",
         payload: {
             ratio,
             bet,
-            betAmount,
-        },
-    }
-}
+            betAmount
+        }
+    };
+};

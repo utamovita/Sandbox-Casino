@@ -1,8 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
-const Statistics= () => {
-
+const Statistics = () => {
     const counterGamesPlayed = useSelector(state => state.counter.gamesPlayed);
     const counterWin = useSelector(state => state.counter.win);
     const counterLose = useSelector(state => state.counter.lose);
@@ -15,11 +14,11 @@ const Statistics= () => {
     const counterNum5 = useSelector(state => state.counter.numbers.num5);
     const counterNum6 = useSelector(state => state.counter.numbers.num6);
 
-        return (
-            <div className="statistics">
-                <h2>Statistics</h2>
-                <table>          
-                    <tbody>
+    return (
+        <div className="statistics">
+            <h2>Statistics</h2>
+            <table>
+                <tbody>
                     <tr>
                         <td>Balance</td>
                         <td>0</td>
@@ -72,11 +71,10 @@ const Statistics= () => {
                         <td>1's</td>
                         <td>{counterNum1}</td>
                     </tr>
-                    </tbody>    
-                </table>
-            </div>
-        )
-    
-}
+                </tbody>
+            </table>
+        </div>
+    );
+};
 
 export default Statistics;

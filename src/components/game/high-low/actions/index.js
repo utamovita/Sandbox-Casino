@@ -36,24 +36,6 @@ export const changeSettings = (ratio, bet, betAmount) => {
     };
 };
 
-export const autoChangeBetLose = () => {
-    return {
-        type: "AUTO_CHANGE_BET_LOSE"
-    };
-};
-
-export const autoChangeBetWin = () => {
-    return {
-        type: "AUTO_CHANGE_BET_WIN"
-    };
-};
-
-export const sandboxMode = () => {
-    return {
-        type: "SANDBOX_MODE"
-    };
-};
-
 export const gameHistory = (num, result, bet) => {
     return {
         type: "GAME_HISTORY",
